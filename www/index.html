@@ -38,7 +38,7 @@
             app.initialize();
         </script>
         <h1>Ticket Skipper</h1>
-        Shows notifications if you need to move your car </br></br></br>
+        Shows notifications if you need to move your car </br></br>
 <div id="user_notification"</div>
 <div id="show_temperature"></div>
     
@@ -57,9 +57,10 @@ jQuery(document).ready(function($) {
                 if(index<8) {
                     if (index==0) {
                         $('#show_temperature').append("snow right now is " + snow + " inches"+ '<br/>');
-                        if (snow<2){
+                        if (snow<2)
                              $('#user_notification').prepend("<p id='note'>You do not have to move your car </p><br/>");
-                        }
+                        else if (snow >= 2)
+                             $('#user_notification').prepend("<p id='note'>Move your car RIGHT NOW!!! </p><br/>");
                     }
                     else
                         $('#show_temperature').append("snow after " + index +" hour is " + snow +  " inches"+ '<br/>');
@@ -69,6 +70,38 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
+
+ <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        // Empty
+    }
+
+    // alert dialog dismissed
+    function alertDismissed() {
+        // do something
+    }
+
+    // Show a custom alert
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+    </script>
+
+
         
     </body>
 </html>
