@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
                     if (index==0) {
                         $('#show_temperature').append("snow right now is " + snow + " inches"+ '<br/>');
                         if (snow<2)
-                             $('#user_notification').prepend("<p id='note'>You do not have to move your car </p><br/>");
+                             $('#user_notification').prepend("<p id='note'>You don't need to move your car right now </p><br/>");
                         else if (snow >= 2)
                              $('#user_notification').prepend("<p id='note'>Move your car RIGHT NOW!!! </p><br/>");
                     }
@@ -71,33 +71,12 @@ jQuery(document).ready(function($) {
 });
 </script>
 
- <script type="text/javascript" charset="utf-8">
+ <script type="text/javascript" charset="utf-8" src="cordova.localNotification.js">
 
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener('deviceready', function () {
+    window.plugin.notification.local.add({ message: 'Great app!' });
+}, false)
 
-    // Cordova is ready
-    //
-    function onDeviceReady() {
-        // Empty
-    }
-
-    // alert dialog dismissed
-    function alertDismissed() {
-        // do something
-    }
-
-    // Show a custom alert
-    //
-    function showAlert() {
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    }
 
     </script>
 
