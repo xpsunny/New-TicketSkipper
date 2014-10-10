@@ -56,14 +56,14 @@ jQuery(document).ready(function($) {
                 //$('#show_temperature').append("At" + hour + " the temperature feelslike is " + feelslike);
                 if(index<8) {
                     if (index==0) {
-                        $('#show_temperature').append("snow right now is " + snow + " inches"+ '<br/>');
+                        $('#show_temperature').append("snow right now:  "  + snow + " inches"+ '<br/>');
                         if (snow<2)
                              $('#user_notification').prepend("<p id='note'>You don't need to move your car right now </p><br/>");
                         else if (snow >= 2)
                              $('#user_notification').prepend("<p id='note'>Move your car RIGHT NOW!!! </p><br/>");
                     }
                     else
-                        $('#show_temperature').append("snow after " + index +" hour is " + snow +  " inches"+ '<br/>');
+                        $('#show_temperature').append("snow after " + index +" hour:  " + snow +  " inches"+ '<br/>');
                 }                
             });
         }
