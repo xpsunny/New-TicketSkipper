@@ -22,7 +22,7 @@ canvas {
       
     </head>
     <body>
-        
+        <p class="event received" onclick="window.plugin.notification.local.add({ sound: 'TYPE_ALARM' });">Device is Ready</p>
         <script type="text/javascript" src="js/snow.js"></script> 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>                  
@@ -30,6 +30,7 @@ canvas {
         <script type="text/javascript">
             app.initialize();
         </script>
+        
         <h1>Ticket Skipper</h1>
         <canvas id="canvas"></canvas>
         Shows notifications if you need to move your car </br></br>
